@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
+import SignIn from "./page/SignIn/components";
+import ChatUI from "./page/ChatUI/components";
+import AuthProvider from "./context/AuthProvider";
+import AppProvider from "./context/AppProvider";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AuthProvider>
+        <AppProvider>
+          <Switch>
+            <Route path="/login" component={SignIn} exact />
+            <Route path="/chat" component={ChatUI}></Route>
+            <Route path="/">{<Redirect to="/login" />}</Route>
+            <Route path="*">
+              <h2>NOT FOUND</h2>
+            </Route>
+          </Switch>
+        </AppProvider>
+      </AuthProvider>
+    </Router>
   );
 }
 
