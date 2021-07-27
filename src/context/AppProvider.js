@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useForceUpdate } from "react";
 import { db } from "../firebase";
 import addDatabase from "../firebase/services";
 import useFileStore from "../hooks/useFileStore";

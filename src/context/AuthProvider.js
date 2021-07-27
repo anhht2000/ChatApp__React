@@ -29,11 +29,12 @@ function AuthProvider(props) {
       const newData = {
         displayName: profile.name,
         email: profile.email,
-        photoURL: profile.picture,
-        uid: user.b.u,
+        photoURL: user.photoURL, //user.photoURL + "?height=500&access_token=" + accessToken.token
+        uid: user.metadata.a,
         providerId: providerId,
       };
       addDatabase("users", newData);
+      console.log(newData);
     }
   };
   //gg
