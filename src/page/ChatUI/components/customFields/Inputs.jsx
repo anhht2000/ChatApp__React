@@ -1,5 +1,5 @@
 import React from "react";
-import { FormFeedback, FormGroup, Input, Label } from "reactstrap";
+import { FormGroup, Input, Label } from "reactstrap";
 
 function Inputs(props) {
   const { field, form, type, label, placeholder, disable } = props; //field va form va formik tu dong truyen

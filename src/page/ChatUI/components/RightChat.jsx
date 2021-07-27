@@ -10,6 +10,7 @@ function RightChat(props) {
   const { SelectedRoom, handleSubmitAddMessage, messages } =
     useContext(AppContext);
   const [inputValue, setinputValue] = useState("");
+  //get member in room
   const condictionUser = useMemo(() => {
     return {
       fieldName: "uid",
@@ -18,6 +19,7 @@ function RightChat(props) {
     };
   }, [SelectedRoom.members]);
   const users = useFileStore("users", condictionUser);
+  console.log({ ok: SelectedRoom.members, users });
   //handle
   const handleChangeInput = (e) => {
     setinputValue(e.target.value);

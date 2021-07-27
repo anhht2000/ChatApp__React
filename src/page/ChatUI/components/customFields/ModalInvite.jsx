@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Form,
   FormGroup,
@@ -8,10 +8,7 @@ import {
   ModalBody,
   ModalHeader,
 } from "reactstrap";
-import { v4 as uuidv4 } from "uuid";
 import { AppContext } from "../../../../context/AppProvider";
-import addDatabase from "../../../../firebase/services";
-import useFileStore from "../../../../hooks/useFileStore";
 import SuggestSearch from "./SuggestSearch";
 
 const ModalExample = (props) => {

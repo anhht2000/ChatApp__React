@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useForceUpdate } from "react";
+import React, { useMemo, useState } from "react";
 import { db } from "../firebase";
 import addDatabase from "../firebase/services";
 import useFileStore from "../hooks/useFileStore";
@@ -40,7 +40,7 @@ function AppProvider(props) {
     };
   }, [SelectedRoom.id]);
   const messages = useFileStore("messages", condictionMessage);
-  console.log({ messages });
+
   //function handle select room
   const handleSelect = (roomId) => {
     const selectRoom = rooms.find((room) => {

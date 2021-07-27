@@ -1,8 +1,13 @@
-import React from "react";
 import { formatRelative } from "date-fns";
+import React from "react";
 
 function MessageLeft(props) {
   const { datamess } = props;
+  if (datamess.createdAt) {
+    console.log(datamess.createdAt.seconds);
+  } else {
+    console.log("none");
+  }
   function convert(ts) {
     let formatedDate = "";
     if (ts) {
@@ -12,27 +17,32 @@ function MessageLeft(props) {
     }
     return formatedDate;
   }
-  return (
-    <div className="chat-content-leftside">
-      <div className="d-flex">
-        <img
-          src={datamess.photoURL}
-          width={48}
-          height={48}
-          className="rounded-circle"
-          alt="not found"
-        />
-        <div className="flex-grow-1 ms-2">
-          <p className="mb-0 chat-time">
-            {datamess.displayName +
-              " :  " +
-              convert(datamess.createdAt.seconds)}
-          </p>
-          <p className="chat-left-msg">{datamess.message}</p>
+  if (Object.keys(datamess).length > 4) {
+    return (
+      // <></>
+      <div className="chat-content-leftside">
+        <div className="d-flex">
+          <img
+            src={datamess.photoURL}
+            width={48}
+            height={48}
+            className="rounded-circle"
+            alt="not found"
+          />
+          <div className="flex-grow-1 ms-2">
+            <p className="mb-0 chat-time">
+              {datamess.createdAt
+                ? datamess.displayName +
+                  " :  " +
+                  convert(datamess.createdAt.seconds)
+                : "ok"}
+            </p>
+            <p className="chat-left-msg">{datamess.message}</p>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else return <></>;
 }
 
 export default MessageLeft;

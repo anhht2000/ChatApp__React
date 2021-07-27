@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
+import { Button, Modal, ModalBody, ModalHeader } from "reactstrap";
 import addDatabase from "../../../../firebase/services";
-import { v4 as uuidv4 } from "uuid";
 import Forms from "./Form";
 
 const ModalExample = (props) => {

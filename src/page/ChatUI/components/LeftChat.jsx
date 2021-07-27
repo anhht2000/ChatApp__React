@@ -1,10 +1,9 @@
-import React, { useContext, useState, useMemo } from "react";
-import { AuthContext } from "../../../context/AuthProvider";
+import React, { useContext, useState } from "react";
 import "reactstrap";
 import { Button, Card, CardBody, Collapse } from "reactstrap";
-import useFileStore from "../../../hooks/useFileStore";
-import Modal from "./customFields/Modal";
 import { AppContext } from "../../../context/AppProvider";
+import { AuthContext } from "../../../context/AuthProvider";
+import Modal from "./customFields/Modal";
 
 function LeftChat(props) {
   const { handleSignOut } = useContext(AuthContext);

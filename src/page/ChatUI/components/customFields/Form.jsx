@@ -1,6 +1,6 @@
+import { FastField, Form, Formik } from "formik";
 import React from "react";
-import { Formik, Form, FastField } from "formik";
-import { Button, FormFeedback, FormGroup, Input, Label } from "reactstrap";
+import { Button } from "reactstrap";
 import Inputs from "./Inputs";
 
 function Forms(props) {
